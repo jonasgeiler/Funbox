@@ -32,6 +32,7 @@
 		'jetzt hab ich hunger':                          'fischtisch',
 		'wenn du verstehst was ich meine':               'fischtisch',
 		'Musst du nicht lernen?':                        'regenleben',
+		'Uff':                                           'Klirrkopf',
 		'Gibt es das auch in besserer Qualität':         'OrNotTobey',
 		'Moment, ich muss erst Skayo\'s Funbox fragen':  'OrNotTobey',
 	};
