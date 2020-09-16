@@ -269,6 +269,7 @@
 			margin: auto;
 			cursor: pointer;
 			z-index: 2;
+			user-select: none;
 
 			&::before {
 				content: "";
