@@ -1,0 +1,16 @@
+@import 'theme';
+
+body {
+	background-color: #f7f7f7;
+}
+
+textarea {
+	resize: vertical;
+	min-height: 200px;
+}
+
+.sk-monospace {
+	font-family: $base-code-font-family !important;
+}
+
+@import 'uikit/src/scss/uikit-theme.scss';
