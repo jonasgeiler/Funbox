@@ -35,6 +35,7 @@
 		'Gibt es das auch in besserer Qualität':         'OrNotTobey',
 		'Moment, ich muss erst Skayo\'s Funbox fragen':  'OrNotTobey',
 		'Das wäre dir mit Erdnuss nicht passiert':       'dingusbread44',
+		'Ich blocke Sie jetzt!':                         '1kescher',
 	};
 
 	let complete = false;
