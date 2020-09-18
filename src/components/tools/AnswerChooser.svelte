@@ -36,6 +36,8 @@
 		'Moment, ich muss erst Skayo\'s Funbox fragen':  'OrNotTobey',
 		'Das wäre dir mit Erdnuss nicht passiert':       'dingusbread44',
 		'Ich blocke Sie jetzt!':                         '1kescher',
+		'hab gehört das is recht ungesund':              'Skayo',
+		'Das auch besser so, du':                        'dingusbread44',
 	};
 
 	let complete = false;
