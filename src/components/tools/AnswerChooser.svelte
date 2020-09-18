@@ -36,6 +36,7 @@
 		'Ich blocke Sie jetzt!':                         '1kescher',
 		'hab gehört das is recht ungesund':              'Skayo',
 		'Das auch besser so, du':                        'dingusbread44',
+		'da hilft nur noch onlyfans':                    '1kescher',
 	};
 </script>
 
