@@ -49,6 +49,7 @@
 	let firstSpin = true;
 	let result = '';
 
+	let resultField;
 	export let copyText;
 
 	function makeSlotItems() {
@@ -72,14 +73,24 @@
 			firstSpin = false;
 
 			makeSlotItems();
-
-			await tick();
 		}
+
+		result = '';
+
+		await tick();
 
 		// Play animation
 		const answerElementToScrollTo = randomAnswerElement();
 		slotMachineContainer.style.top = (-answerElementToScrollTo.offsetTop) + 'px';
-		result = answerElementToScrollTo.innerText.trim();
+
+		setTimeout(() => {
+			result = answerElementToScrollTo.innerText.trim();
+		}, 1100);
+	}
+
+	function select(element) {
+		element.select();
+		element.setSelectionRange(0, element.value.length);
 	}
 </script>
 
@@ -94,7 +105,16 @@
 		</div>
 	</div>
 
-	{#if !firstSpin}
+	{#if !firstSpin && result !== ''}
+		<div class="uk-width-1-1 uk-flex uk-flex-center uk-margin-bottom">
+			<span class="uk-width-auto" data-uk-icon="icon: arrow-down; ratio: 3" data-uk-tooltip="pos: left" title="Result"></span>
+		</div>
+
+		<div class="uk-text-center">
+			<input bind:this={resultField} on:click={select(resultField)} class="uk-input uk-form-large" type="text" readonly value={result}>
+			<a class="uk-text-meta uk-margin-small-top" href="https://twitter.com/{ANSWERS[result]}">by @{ANSWERS[result]}</a>
+		</div>
+
 		<button on:click={copyText(result)} class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-top">Copy</button>
 	{/if}
 </Tool>
@@ -110,7 +130,7 @@
 		cursor: pointer;
 
 		&-container {
-			transition: top ease-in-out 0.5s;
+			transition: top ease-in-out 1s;
 			position: absolute;
 			width: 100%;
 			top: 0;
