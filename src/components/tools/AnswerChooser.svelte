@@ -2,6 +2,7 @@
 	import ANSWERS from '../../../answers.json';
 
 	const SLIDE_LIST_LENGTH = 5;
+	const MIN_TRAVEL_DISTANCE = 5;
 </script>
 
 <script>
@@ -13,6 +14,7 @@
 	let slotMachineContainer;
 	let firstSpin = true;
 	let result = '';
+	let prevRandomIndex = 0;
 
 	let resultField;
 	export let copyText;
@@ -28,7 +30,13 @@
 	function randomAnswerElement() {
 		const answerElements = slotMachineContainer.children;
 
-		const randomIndex = Math.floor(Math.random() * answerElements.length);
+		let randomIndex = 0;
+
+		do {
+			randomIndex = Math.floor(Math.random() * answerElements.length);
+		} while ((randomIndex > prevRandomIndex ? randomIndex - prevRandomIndex : prevRandomIndex - randomIndex) < MIN_TRAVEL_DISTANCE);
+
+		prevRandomIndex = randomIndex;
 
 		return answerElements[randomIndex];
 	}
