@@ -2,7 +2,7 @@
 	import ANSWERS from '../../../answers.json';
 
 	const SLIDE_LIST_LENGTH = 5;
-	const MIN_TRAVEL_DISTANCE = 5;
+	const MIN_TRAVEL_DISTANCE = 10;
 </script>
 
 <script>
