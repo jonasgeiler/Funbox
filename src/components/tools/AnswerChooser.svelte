@@ -85,7 +85,10 @@
 
 		<div class="uk-text-center">
 			<input bind:this={resultField} on:click={select(resultField)} class="uk-input uk-form-large" type="text" readonly value={result}>
-			<a class="uk-text-meta uk-margin-small-top" href="https://twitter.com/{ANSWERS[result]}">by @{ANSWERS[result]}</a>
+
+			{#if ANSWERS[result] !== ''}
+				<a class="uk-text-meta" href="https://twitter.com/{ANSWERS[result]}">by @{ANSWERS[result]}</a>
+			{/if}
 		</div>
 
 		<button on:click={copyText(result)} class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-top">Copy</button>
