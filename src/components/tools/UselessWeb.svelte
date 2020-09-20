@@ -149,13 +149,13 @@
 <style lang="scss">
 	h1 {
 		text-shadow: 2px 2px 4px #999;
-		line-height: 0.95;
+		line-height: 68px;
 		font-size: 68px;
 	}
 
 	h2 {
 		text-shadow: 2px 2px 4px #999;
-		line-height: 0.9;
+		line-height: 30px;
 		font-size: 30px;
 	}
 
