@@ -1,5 +1,5 @@
 <script context="module">
-	const SLIDE_LIST_LENGTH = 5;
+	const SLIDE_LIST_LENGTH = 3;
 	const MIN_TRAVEL_DISTANCE = 10;
 </script>
 
