@@ -1,14 +1,13 @@
 <script context="module">
-	import ANSWERS from '../../../answers.json';
-
 	const SLIDE_LIST_LENGTH = 5;
 	const MIN_TRAVEL_DISTANCE = 10;
 </script>
 
 <script>
-	import { tick } from 'svelte';
+	import { onMount, tick } from 'svelte';
 	import Tool from './Tool.svelte';
 
+	let answers;
 	let slotItems = ['Click here to spin!'];
 
 	let slotMachineContainer;
@@ -23,7 +22,7 @@
 		slotItems = [];
 
 		for (let i = 0; i <= SLIDE_LIST_LENGTH; i++) {
-			slotItems = [...slotItems, ...Object.keys(ANSWERS)];
+			slotItems = [...slotItems, ...Object.keys(answers)];
 		}
 	}
 
@@ -42,6 +41,8 @@
 	}
 
 	async function handleClick() {
+		if (!answers) return;
+
 		if (firstSpin) {
 			firstSpin = false;
 
@@ -65,6 +66,11 @@
 		element.select();
 		element.setSelectionRange(0, element.value.length);
 	}
+
+	onMount(async function () {
+		const response = await fetch('https://answers.fun.skayo.dev/answers.json');
+		answers = await response.json();
+	});
 </script>
 
 <Tool title="Answer Chooser (German)" size="large">
@@ -86,8 +92,8 @@
 		<div class="uk-text-center">
 			<input bind:this={resultField} on:click={select(resultField)} class="uk-input uk-form-large" type="text" readonly value={result}>
 
-			{#if ANSWERS[result] !== ''}
-				<a class="uk-text-meta" href="https://twitter.com/{ANSWERS[result]}">by @{ANSWERS[result]}</a>
+			{#if answers[result] !== ''}
+				<a class="uk-text-meta" href="https://twitter.com/{answers[result]}">by @{answers[result]}</a>
 			{/if}
 		</div>
 
