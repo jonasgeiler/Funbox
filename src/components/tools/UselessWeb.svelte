@@ -76,6 +76,7 @@
 		"https://zoomquilt.org/",
 		"https://dadlaughbutton.com/",
 		"https://www.bouncingdvdlogo.com/",
+		"https://doggos.kescher.at/",
 	];
 
 	const RANDOM_RANGE = 7;
