@@ -1,5 +1,5 @@
 <script context="module">
-	const SLIDE_LIST_LENGTH = 3;
+	const SLIDE_LIST_LENGTH = 2;
 	const MIN_TRAVEL_DISTANCE = 10;
 </script>
 
@@ -8,7 +8,7 @@
 	import Tool from './Tool.svelte';
 
 	let answers;
-	let slotItems = ['Click here to spin!'];
+	let slotItems = [];
 
 	let slotMachineContainer;
 	let firstSpin = true;
@@ -43,11 +43,7 @@
 	async function handleClick() {
 		if (!answers) return;
 
-		if (firstSpin) {
-			firstSpin = false;
-
-			makeSlotItems();
-		}
+		if (firstSpin) firstSpin = false;
 
 		result = '';
 
@@ -70,12 +66,20 @@
 	onMount(async function () {
 		const response = await fetch('https://answers.fun.skayo.dev/answers.json');
 		answers = await response.json();
+
+		makeSlotItems();
 	});
 </script>
 
 <Tool title="Answer Chooser (German)" size="large">
 	<div on:click={handleClick} class="slot-machine">
 		<div bind:this={slotMachineContainer} class="slot-machine-container">
+			{#if firstSpin}
+				<div class="slot-machine-item">
+					<h1 class="slot-machine-item-title">Click here to spin!</h1>
+				</div>
+			{/if}
+
 			{#each slotItems as slotItem}
 				<div class="slot-machine-item">
 					<h1 class="slot-machine-item-title">{slotItem}</h1>
