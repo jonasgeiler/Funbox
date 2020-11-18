@@ -107,6 +107,7 @@
 
 <style lang="scss">
 	$slot-machine-item-height: 80px;
+	$slot-machine-spin-duration: 1s;
 
 	.slot-machine {
 		position: relative;
@@ -116,7 +117,7 @@
 		cursor: pointer;
 
 		&-container {
-			transition: top ease-in-out 1s;
+			transition: top ease-in-out $slot-machine-spin-duration;
 			position: absolute;
 			width: 100%;
 			top: 0;

@@ -28,7 +28,7 @@
 </style>
 
 <svelte:head>
-	<title>Skayo's Funbox | Error {status}</title>
+	<title>Error {status} - Funbox, by Skayo</title>
 </svelte:head>
 
 <h1>{status}</h1>

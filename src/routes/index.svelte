@@ -10,7 +10,7 @@
 </script>
 
 <svelte:head>
-	<title>Skayo's Funbox</title>
+	<title>Funbox, by Skayo</title>
 </svelte:head>
 
 <div class="uk-grid-medium" uk-grid uk-sortable="handle: .uk-sortable-handle">
