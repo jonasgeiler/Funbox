@@ -20,6 +20,8 @@
 		<!-- This contains the contents of the <svelte:head> component, if
 			 the current page has one -->
 		%sapper.head%
+
+		<script async defer data-domain="fun.skayo.dev" src="https://analytics.skayo.dev/js/plausible.js"></script>
 	</head>
 	<body>
 		<!-- The application will be rendered inside this element,
@@ -30,6 +32,5 @@
 			 and anything else it needs to hydrate the app and
 			 initialise the router -->
 		%sapper.scripts%
-		<script async src="https://analytics.skayo.dev/ackee.js" data-ackee-server="https://analytics.skayo.dev" data-ackee-domain-id="cc50fb58-cd41-41ec-847e-6b84bab67203"></script>
 	</body>
 </html>
